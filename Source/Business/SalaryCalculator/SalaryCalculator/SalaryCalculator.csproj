@@ -43,6 +43,7 @@
     <Compile Include="DomainObjects\Debit.cs" />
     <Compile Include="DomainObjects\Deduction.cs" />
     <Compile Include="DomainObjects\Enums.cs" />
+    <Compile Include="DomainObjects\Salary.cs" />
     <Compile Include="DomainObjects\Tax.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

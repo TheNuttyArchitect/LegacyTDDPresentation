@@ -12,17 +12,11 @@ namespace SalaryCalculatorTests
         public void CanInvokeService()
         {
             var service = new Service();
-            NotImplementedException nex = null;
-            try
-            {
-                service.Invoke("Ben", "Chesnut", DateTime.Now);
-            }
-            catch (NotImplementedException nie)
-            {
-                nex = nie;
-            }
+            
+            var response = service.Invoke("Ben", "Chesnut", DateTime.Parse("9/04/2012"));
 
-            Assert.IsTrue(nex != null);
+            Assert.IsNotNull(response);
+            
         }
 
         
