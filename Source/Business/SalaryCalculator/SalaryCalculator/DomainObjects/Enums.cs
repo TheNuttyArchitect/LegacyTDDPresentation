@@ -17,9 +17,9 @@ namespace SalaryCalculator.DomainObjects
 
     public enum TaxType
     {
-        Federal,
-        State,
-        Local,
-        FICA
+        Federal = 1,
+        State = 2,
+        Local = 3,
+        FICA = 4
     }
 }

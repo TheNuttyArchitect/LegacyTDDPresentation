@@ -14,6 +14,7 @@ namespace SalaryCalculator
         public CalculatorResponse Invoke(string firstName, string lastName, DateTime payDate)
         {
             var calculatorResponse = new CalculatorResponse {FullName = String.Format("{0}, {1}", lastName, firstName)};
+            decimal annualSalary = 0;
 
             #region Calculate Pay Period
             // Payment is always for period two weeks in arrears from pay date
@@ -69,6 +70,8 @@ namespace SalaryCalculator
                                 BeginDate = reader.GetDateTime(beginDateIndex),
                                 EndDate = reader.GetDateTime(endDateIndex),
                             };
+                            if (salary.AnnualAmount > annualSalary)
+                                annualSalary = salary.AnnualAmount;
                             salaries.Add(salary);
                         }
                     }
@@ -88,9 +91,10 @@ namespace SalaryCalculator
                         decimal periodRate = (biweeklyRate/14*daysInPeriodSalaryValidFor);
                         calculatorResponse.TotalPay += periodRate;
                     }
-
+                    calculatorResponse.TaxableAmount = calculatorResponse.TotalPay;
                     #endregion
 
+                    // TODO: This is the task we will add in for our refactoring exercise, it is the ability to tell whether a deduction is taxable or not
                     #region Get Employee's available deductions
                     cmd.CommandText =
                         @"select dt.TypeId, dr.Amount, 
@@ -203,22 +207,101 @@ namespace SalaryCalculator
                             };
                             calculatorResponse.Deductions.Add(deduction);    
                         }
-                        
+                        calculatorResponse.TaxableAmount -= deduction.Amount;
                     }
                     #endregion
 
-                    #region Apply Employee Taxes
+                    #region Get Tax Rates
+                    cmd.Parameters.Clear();
+                    cmd.CommandText =
+                        @"select tr.TaxTypeId, tr.Rate, tr.StartDate, tr.EndDate
+                              from dbo.TaxRate tr
+                              where tr.StartDate <= @PayPeriodBegin
+                                and tr.EndDate >= @PayPeriodEnd
+	                            and ((@Salary between tr.MinimumSalary and tr.MaximumSalary)
+		                             or (tr.MinimumSalary is null and tr.MaximumSalary is null)
+		                             or (tr.MinimumSalary < @Salary and tr.MaximumSalary is null)
+		                             or (tr.MinimumSalary is null and tr.MaximumSalary > @Salary))";
+                    cmd.Parameters.Add(new SqlParameter("@Salary", SqlDbType.Decimal) { Value = annualSalary});
+                    cmd.Parameters.Add(new SqlParameter("@PayPeriodBegin", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayPeriodBegin });
+                    cmd.Parameters.Add(new SqlParameter("@PayPeriodEnd", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayPeriodEnd });
 
+                    var taxRates = new List<TaxRate>();
+                    using(var reader = cmd.ExecuteReader())
+                    {
+                        int taxTypeOrd = reader.GetOrdinal("TaxTypeId");
+                        int rateOrd = reader.GetOrdinal("Rate");
+                        int startDateOrd = reader.GetOrdinal("StartDate");
+                        int endDateOrd = reader.GetOrdinal("EndDate");
+
+                        while (reader.Read())
+                        {
+                            var taxRate = new TaxRate
+                            {
+                                Type = (TaxType)reader.GetInt32(taxTypeOrd),
+                                Rate = reader.GetDecimal(rateOrd),
+                                StartDate = reader.GetDateTime(startDateOrd),
+                                EndDate = reader.GetDateTime(endDateOrd)
+                            };
+                            taxRates.Add(taxRate);
+                        }
+                    }
+
+                    #endregion
+
+                    #region Apply Employee Taxes
+                    var taxRatesToApply = new List<TaxRate>();
+
+                    foreach(var taxRate in taxRates)
+                    {
+                        var rangeBegin = taxRate.StartDate < calculatorResponse.PayPeriodBegin
+                                             ? calculatorResponse.PayPeriodBegin
+                                             : taxRate.StartDate;
+                        var rangeEnd = taxRate.EndDate > calculatorResponse.PayPeriodEnd
+                                           ? calculatorResponse.PayPeriodEnd
+                                           : taxRate.EndDate;
+                        int daysInPeriodTaxRateFor = (rangeEnd - rangeBegin).Days;
+                        decimal biweeklyTaxRate = taxRate.Rate/26;
+                        decimal taxRateForPeriod = biweeklyTaxRate/daysInPeriodTaxRateFor;
+                        TaxRate taxRateToApply = taxRatesToApply.FirstOrDefault(r => r.Type == taxRate.Type);
+                        if(taxRateToApply != null)
+                        {
+                            taxRateToApply.Rate += taxRateForPeriod;
+                        }
+                        else
+                        {
+                            taxRateToApply = new TaxRate
+                            {
+                                Rate = taxRateForPeriod,
+                                Type = taxRate.Type
+                            };
+                            taxRatesToApply.Add(taxRateToApply);
+                        }
+                    }
+
+                    foreach(var rateToApply in taxRatesToApply)
+                    {
+                        var tax = new Tax
+                        {
+                            Amount = calculatorResponse.TaxableAmount * rateToApply.Rate,
+                            DebitType = rateToApply.Type
+                        };
+                        calculatorResponse.Taxes.Add(tax);
+                    }
                     #endregion
 
                     #region Get Prior Paychecks for year
 
                     #endregion
 
+                    #region Include YearToDateTotals
+                    
+                    #endregion
+
                     #region Calculate Paycheck Totals
-
-                    //calculatorResponse.TotalDeductions = calculatorResponse.Deductions.Sum(d => d.Amount);
-
+                    calculatorResponse.TotalDeductions = calculatorResponse.Deductions.Sum(d => d.Amount);
+                    calculatorResponse.TotalTaxes = calculatorResponse.Taxes.Sum(t => t.Amount);
+                    calculatorResponse.NetPay = calculatorResponse.TotalPay - calculatorResponse.TotalDeductions - calculatorResponse.TotalTaxes;
                     #endregion
 
                     #region Save Paycheck to database

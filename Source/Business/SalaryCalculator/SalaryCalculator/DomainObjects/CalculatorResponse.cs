@@ -12,6 +12,7 @@ namespace SalaryCalculator.DomainObjects
         public string FullName { get; set; }
         public DateTime PayPeriodBegin { get; set; }
         public DateTime PayPeriodEnd { get; set; }
+        public decimal TaxableAmount { get; set; }
         public decimal TotalPay { get; set; }
         public decimal TotalPayYearToDate { get; set; }
         public decimal TotalDeductions { get; set; }
