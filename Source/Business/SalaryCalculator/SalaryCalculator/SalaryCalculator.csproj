@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainObjects\AvailableDeduction.cs" />
     <Compile Include="DomainObjects\CalculatorResponse.cs" />
     <Compile Include="DomainObjects\Debit.cs" />
     <Compile Include="DomainObjects\Deduction.cs" />

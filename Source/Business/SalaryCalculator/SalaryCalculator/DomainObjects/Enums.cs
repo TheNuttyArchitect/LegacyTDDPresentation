@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +7,12 @@ namespace SalaryCalculator.DomainObjects
 {
     public enum DeductionType
     {
-        MedicalInsurance,
-        DentalInsurance,
-        VisionInsurance,
-        ShortTermDisability,
-        LongTermDisability,
-        FourOOneK
+        MedicalInsurance = 1,
+        DentalInsurance = 2,
+        VisionInsurance = 3,
+        ShortTermDisability = 4,
+        LongTermDisability = 5,
+        FourOOneK = 6
     }
 
     public enum TaxType

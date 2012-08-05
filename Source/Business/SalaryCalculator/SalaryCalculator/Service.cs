@@ -91,15 +91,133 @@ namespace SalaryCalculator
 
                     #endregion
 
-                    #region Apply Employee Deductions
+                    #region Get Employee's available deductions
+                    cmd.CommandText =
+                        @"select dt.TypeId, dr.Amount, 
+	                        dr.StartDate RateStart, 
+	                        dr.EndDate RateEnd, 
+	                        a.StartDate EmpStart, 
+	                        a.EndDate EmpEnd
+                          from dbo.AvailableEmployeeDeduction a
+	                        inner join dbo.DeductionType dt on a.DeductionTypeId = dt.TypeId
+	                        inner join dbo.DeductionRate dr on dr.DeductionTypeId = dt.TypeId
+                          where a.EmployeeId  = @EmployeeId
+	                        and dr.StartDate <= @PayPeriodEnd
+	                        and dr.EndDate >= @PayPeriodBegin
+	                        and a.StartDate <= @PayPeriodEnd 
+                            and a.EndDate >= @PayPeriodBegin";
 
+                    var availableDeductions = new List<AvailableDeduction>();
+                    using(var reader = cmd.ExecuteReader())
+                    {
+                        int typeIdOrd = reader.GetOrdinal("TypeId");
+                        int amountOrd = reader.GetOrdinal("Amount");
+                        int rateStartOrd = reader.GetOrdinal("RateStart");
+                        int rateEndOrd = reader.GetOrdinal("RateEnd");
+                        int empStartOrd = reader.GetOrdinal("EmpStart");
+                        int empEndOrd = reader.GetOrdinal("EmpEnd");
+
+                        while(reader.Read())
+                        {
+                            var availableDeduction = new AvailableDeduction
+                            {
+                                Type = (DeductionType) reader.GetInt32(typeIdOrd),
+                                Rate = reader.GetDecimal(amountOrd),
+                                RateStartDate = reader.GetDateTime(rateStartOrd),
+                                RateEndDate = reader.GetDateTime(rateEndOrd),
+                                EmployeeDeductionStartDate = reader.GetDateTime(empStartOrd),
+                                EmployeeDeductionEndDate = reader.GetDateTime(empEndOrd),
+                            };
+                            availableDeductions.Add(availableDeduction);
+                        }
+                    }
+                    #endregion
+
+                    #region Apply Employee Deductions
+                    foreach(var availableDeduction in availableDeductions)
+                    {
+                        /*
+                         *  RateStart = 8/1/2012
+                         *  RateEnd = 7/31/2013
+                         *  EmpStart = 7/24/2012
+                         *  EmpEnd = 7/23/2013
+                         *  PayStart = 7/15/2012
+                         *  PayEnd = 8/14/2012
+                         *  
+                         * RangeStart:
+                         *      When RateStart <= PayStart && EmpStart <= PayStart Then PayStart
+                         *      Else When RateStart > PayStart && EmpStart > RateStart Then RateStart
+                         *      Else When EmpStart > PayStart Then EmpStart
+                         * 
+                         * RangeEnd:
+                         *      When RateEnd >= PayEnd && EmpEnd >= PayEnd Then PayEnd
+                         *      Else When RateEnd < PayEnd && EmpEnd > RateEnd Then RateEnd
+                         *      Else EmpEnd
+                         */
+                        DateTime rangeBegin, rangeEnd;
+                        if(availableDeduction.RateStartDate <= calculatorResponse.PayPeriodBegin && 
+                            availableDeduction.EmployeeDeductionStartDate <= calculatorResponse.PayPeriodBegin)
+                        {
+                            rangeBegin = calculatorResponse.PayPeriodBegin;
+                        }
+                        else if(availableDeduction.RateStartDate > calculatorResponse.PayPeriodBegin &&
+                             availableDeduction.EmployeeDeductionStartDate > availableDeduction.RateStartDate)
+                        {
+                            rangeBegin = availableDeduction.RateStartDate;
+                        }
+                        else
+                        {
+                            rangeBegin = availableDeduction.EmployeeDeductionStartDate;
+                        }
+
+                        if(availableDeduction.RateEndDate >= calculatorResponse.PayPeriodEnd &&
+                            availableDeduction.EmployeeDeductionEndDate >= calculatorResponse.PayPeriodEnd)
+                        {
+                            rangeEnd = calculatorResponse.PayPeriodEnd;
+                        }
+                        else if(availableDeduction.RateEndDate < calculatorResponse.PayPeriodEnd &&
+                            availableDeduction.EmployeeDeductionEndDate > availableDeduction.RateEndDate)
+                        {
+                            rangeEnd = availableDeduction.RateEndDate;
+                        }
+                        else
+                        {
+                            rangeEnd = availableDeduction.EmployeeDeductionEndDate;
+                        }
+
+                        int daysInPeriodDeductionValidFor = (rangeEnd - rangeBegin).Days;
+                        decimal biweeklyDeduction = availableDeduction.Rate / 26;
+                        decimal periodDeduction = (biweeklyDeduction / 14 * daysInPeriodDeductionValidFor);
+
+                        Deduction deduction = calculatorResponse.Deductions.FirstOrDefault(d => d.DebitType == availableDeduction.Type);
+                        if(deduction != null)
+                        {
+                            deduction.Amount += periodDeduction;
+                        }
+                        else
+                        {
+                            deduction = new Deduction
+                            {
+                                Amount = periodDeduction,
+                                DebitType = availableDeduction.Type
+                            };
+                            calculatorResponse.Deductions.Add(deduction);    
+                        }
+                        
+                    }
                     #endregion
 
                     #region Apply Employee Taxes
 
                     #endregion
 
+                    #region Get Prior Paychecks for year
+
+                    #endregion
+
                     #region Calculate Paycheck Totals
+
+                    //calculatorResponse.TotalDeductions = calculatorResponse.Deductions.Sum(d => d.Amount);
 
                     #endregion
 
