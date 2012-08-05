@@ -8,8 +8,10 @@ namespace SalaryCalculator.DomainObjects
 {
     public class CalculatorResponse
     {
+        public Guid PaymentId { get; set; }
         public Guid EmployeeId { get; set; }
         public string FullName { get; set; }
+        public DateTime PayDate { get; set; }
         public DateTime PayPeriodBegin { get; set; }
         public DateTime PayPeriodEnd { get; set; }
         public decimal TaxableAmount { get; set; }

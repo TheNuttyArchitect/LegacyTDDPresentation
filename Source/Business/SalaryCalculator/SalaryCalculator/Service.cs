@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,7 +14,12 @@ namespace SalaryCalculator
     {
         public CalculatorResponse Invoke(string firstName, string lastName, DateTime payDate)
         {
-            var calculatorResponse = new CalculatorResponse {FullName = String.Format("{0}, {1}", lastName, firstName)};
+            var calculatorResponse = new CalculatorResponse
+            {
+                FullName = String.Format("{0}, {1}", lastName, firstName), 
+                PaymentId = Guid.NewGuid(), 
+                PayDate = payDate
+            };
             decimal annualSalary = 0;
 
             #region Calculate Pay Period
@@ -31,7 +37,7 @@ namespace SalaryCalculator
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = 
                         @"Select Top 1 EmployeeId 
-                            From dbo.Employee 
+                            From dbo.Employee with (nolock)
                             Where FirstName = @FirstName 
                                 And LastName = @LastName";
                     cmd.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.VarChar, 50) {Value = firstName});
@@ -45,7 +51,7 @@ namespace SalaryCalculator
                     cmd.Parameters.Clear();
                     cmd.CommandText =
                         @"Select Amount, BeginDate, EndDate
-                            From dbo.AnnualSalary
+                            From dbo.AnnualSalary with (nolock)
                             Where EmployeeId = @EmployeeId 
                                 And BeginDate <= @PayPeriodEnd 
                                 And EndDate >= @PayPeriodBegin";
@@ -81,11 +87,11 @@ namespace SalaryCalculator
                     foreach(var salary in salaries)
                     {
                         var rangeBegin = salary.BeginDate < calculatorResponse.PayPeriodBegin
-                                             ? calculatorResponse.PayPeriodBegin
-                                             : salary.BeginDate;
+                                                ? calculatorResponse.PayPeriodBegin
+                                                : salary.BeginDate;
                         var rangeEnd = salary.EndDate > calculatorResponse.PayPeriodEnd
-                                           ? calculatorResponse.PayPeriodEnd
-                                           : salary.EndDate;
+                                            ? calculatorResponse.PayPeriodEnd
+                                            : salary.EndDate;
                         int daysInPeriodSalaryValidFor = (rangeEnd - rangeBegin).Days;
                         decimal biweeklyRate = salary.AnnualAmount/26;
                         decimal periodRate = (biweeklyRate/14*daysInPeriodSalaryValidFor);
@@ -102,10 +108,10 @@ namespace SalaryCalculator
 	                        dr.EndDate RateEnd, 
 	                        a.StartDate EmpStart, 
 	                        a.EndDate EmpEnd
-                          from dbo.AvailableEmployeeDeduction a
-	                        inner join dbo.DeductionType dt on a.DeductionTypeId = dt.TypeId
-	                        inner join dbo.DeductionRate dr on dr.DeductionTypeId = dt.TypeId
-                          where a.EmployeeId  = @EmployeeId
+                            from dbo.AvailableEmployeeDeduction a with (nolock)
+	                        inner join dbo.DeductionType dt with (nolock) on a.DeductionTypeId = dt.TypeId
+	                        inner join dbo.DeductionRate dr with (nolock) on dr.DeductionTypeId = dt.TypeId
+                            where a.EmployeeId  = @EmployeeId
 	                        and dr.StartDate <= @PayPeriodEnd
 	                        and dr.EndDate >= @PayPeriodBegin
 	                        and a.StartDate <= @PayPeriodEnd 
@@ -138,26 +144,27 @@ namespace SalaryCalculator
                     #endregion
 
                     #region Apply Employee Deductions
+                    calculatorResponse.Deductions = new List<Deduction>();
                     foreach(var availableDeduction in availableDeductions)
                     {
                         /*
-                         *  RateStart = 8/1/2012
-                         *  RateEnd = 7/31/2013
-                         *  EmpStart = 7/24/2012
-                         *  EmpEnd = 7/23/2013
-                         *  PayStart = 7/15/2012
-                         *  PayEnd = 8/14/2012
-                         *  
-                         * RangeStart:
-                         *      When RateStart <= PayStart && EmpStart <= PayStart Then PayStart
-                         *      Else When RateStart > PayStart && EmpStart > RateStart Then RateStart
-                         *      Else When EmpStart > PayStart Then EmpStart
-                         * 
-                         * RangeEnd:
-                         *      When RateEnd >= PayEnd && EmpEnd >= PayEnd Then PayEnd
-                         *      Else When RateEnd < PayEnd && EmpEnd > RateEnd Then RateEnd
-                         *      Else EmpEnd
-                         */
+                            *  RateStart = 8/1/2012
+                            *  RateEnd = 7/31/2013
+                            *  EmpStart = 7/24/2012
+                            *  EmpEnd = 7/23/2013
+                            *  PayStart = 7/15/2012
+                            *  PayEnd = 8/14/2012
+                            *  
+                            * RangeStart:
+                            *      When RateStart <= PayStart && EmpStart <= PayStart Then PayStart
+                            *      Else When RateStart > PayStart && EmpStart > RateStart Then RateStart
+                            *      Else When EmpStart > PayStart Then EmpStart
+                            * 
+                            * RangeEnd:
+                            *      When RateEnd >= PayEnd && EmpEnd >= PayEnd Then PayEnd
+                            *      Else When RateEnd < PayEnd && EmpEnd > RateEnd Then RateEnd
+                            *      Else EmpEnd
+                            */
                         DateTime rangeBegin, rangeEnd;
                         if(availableDeduction.RateStartDate <= calculatorResponse.PayPeriodBegin && 
                             availableDeduction.EmployeeDeductionStartDate <= calculatorResponse.PayPeriodBegin)
@@ -165,7 +172,7 @@ namespace SalaryCalculator
                             rangeBegin = calculatorResponse.PayPeriodBegin;
                         }
                         else if(availableDeduction.RateStartDate > calculatorResponse.PayPeriodBegin &&
-                             availableDeduction.EmployeeDeductionStartDate > availableDeduction.RateStartDate)
+                                availableDeduction.EmployeeDeductionStartDate < availableDeduction.RateStartDate)
                         {
                             rangeBegin = availableDeduction.RateStartDate;
                         }
@@ -192,7 +199,7 @@ namespace SalaryCalculator
                         int daysInPeriodDeductionValidFor = (rangeEnd - rangeBegin).Days;
                         decimal biweeklyDeduction = availableDeduction.Rate / 26;
                         decimal periodDeduction = (biweeklyDeduction / 14 * daysInPeriodDeductionValidFor);
-
+                        
                         Deduction deduction = calculatorResponse.Deductions.FirstOrDefault(d => d.DebitType == availableDeduction.Type);
                         if(deduction != null)
                         {
@@ -215,13 +222,13 @@ namespace SalaryCalculator
                     cmd.Parameters.Clear();
                     cmd.CommandText =
                         @"select tr.TaxTypeId, tr.Rate, tr.StartDate, tr.EndDate
-                              from dbo.TaxRate tr
-                              where tr.StartDate <= @PayPeriodBegin
+                                from dbo.TaxRate tr with (nolock)
+                                where tr.StartDate <= @PayPeriodBegin
                                 and tr.EndDate >= @PayPeriodEnd
 	                            and ((@Salary between tr.MinimumSalary and tr.MaximumSalary)
-		                             or (tr.MinimumSalary is null and tr.MaximumSalary is null)
-		                             or (tr.MinimumSalary < @Salary and tr.MaximumSalary is null)
-		                             or (tr.MinimumSalary is null and tr.MaximumSalary > @Salary))";
+		                                or (tr.MinimumSalary is null and tr.MaximumSalary is null)
+		                                or (tr.MinimumSalary < @Salary and tr.MaximumSalary is null)
+		                                or (tr.MinimumSalary is null and tr.MaximumSalary > @Salary))";
                     cmd.Parameters.Add(new SqlParameter("@Salary", SqlDbType.Decimal) { Value = annualSalary});
                     cmd.Parameters.Add(new SqlParameter("@PayPeriodBegin", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayPeriodBegin });
                     cmd.Parameters.Add(new SqlParameter("@PayPeriodEnd", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayPeriodEnd });
@@ -255,13 +262,13 @@ namespace SalaryCalculator
                     foreach(var taxRate in taxRates)
                     {
                         var rangeBegin = taxRate.StartDate < calculatorResponse.PayPeriodBegin
-                                             ? calculatorResponse.PayPeriodBegin
-                                             : taxRate.StartDate;
+                                                ? calculatorResponse.PayPeriodBegin
+                                                : taxRate.StartDate;
                         var rangeEnd = taxRate.EndDate > calculatorResponse.PayPeriodEnd
-                                           ? calculatorResponse.PayPeriodEnd
-                                           : taxRate.EndDate;
+                                            ? calculatorResponse.PayPeriodEnd
+                                            : taxRate.EndDate;
                         int daysInPeriodTaxRateFor = (rangeEnd - rangeBegin).Days;
-                        decimal biweeklyTaxRate = taxRate.Rate/26;
+                        decimal biweeklyTaxRate = taxRate.Rate / 26;
                         decimal taxRateForPeriod = biweeklyTaxRate/daysInPeriodTaxRateFor;
                         TaxRate taxRateToApply = taxRatesToApply.FirstOrDefault(r => r.Type == taxRate.Type);
                         if(taxRateToApply != null)
@@ -279,6 +286,7 @@ namespace SalaryCalculator
                         }
                     }
 
+                    calculatorResponse.Taxes = new List<Tax>();
                     foreach(var rateToApply in taxRatesToApply)
                     {
                         var tax = new Tax
@@ -304,9 +312,69 @@ namespace SalaryCalculator
                     calculatorResponse.NetPay = calculatorResponse.TotalPay - calculatorResponse.TotalDeductions - calculatorResponse.TotalTaxes;
                     #endregion
 
-                    #region Save Paycheck to database
+                    cmd.Transaction = conn.BeginTransaction();
+                    try
+                    {
+                        #region Save Paycheck to database
+                        cmd.Parameters.Clear();
+                        cmd.CommandText =
+                            @"	insert into dbo.Payment
+		                            (PaymentId, EmployeeId, Paydate, TotalAmount, TotalDeductions, TotalTaxes)
+	                                values
+		                            (@PaymentId, @EmployeeId, @Paydate, @TotalAmount, @TotalDeductions, @TotalTaxes)";
 
-                    #endregion
+                        cmd.Parameters.Add(new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) {Value = calculatorResponse.PaymentId});
+                        cmd.Parameters.Add(new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = calculatorResponse.EmployeeId });
+                        cmd.Parameters.Add(new SqlParameter("@Paydate", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayDate });
+                        cmd.Parameters.Add(new SqlParameter("@TotalAmount", SqlDbType.Decimal) { Precision = 7, Scale = 2, Value = calculatorResponse.TotalPay });
+                        cmd.Parameters.Add(new SqlParameter("@TotalDeductions", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = calculatorResponse.TotalDeductions });
+                        cmd.Parameters.Add(new SqlParameter("@TotalTaxes", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = calculatorResponse.TotalTaxes });
+
+                        cmd.ExecuteNonQuery();
+                        #endregion
+
+                        #region Save Deductions to database
+                        cmd.CommandText =
+                            @"insert into dbo.Deduction
+	                            (PaymentId, Amount, [Type])
+                                values
+                                (@PaymentId, @Amount, @Type)";
+                        foreach(var deduction in calculatorResponse.Deductions)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.Add(new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = calculatorResponse.PaymentId });
+                            cmd.Parameters.Add(new SqlParameter("@Amount", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = deduction.Amount });
+                            cmd.Parameters.Add(new SqlParameter("@Type", SqlDbType.VarChar, 50) {Value = deduction.DebitType.ToString()});
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        #endregion
+
+                        #region Save Taxes to database
+                        cmd.CommandText =
+                            @"insert into dbo.Tax
+	                            (PaymentId, Amount, [Type])
+                                values
+                                (@PaymentId, @Amount, @Type)";
+
+                        foreach(var tax in calculatorResponse.Taxes)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.Add(new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = calculatorResponse.PaymentId });
+                            cmd.Parameters.Add(new SqlParameter("@Amount", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = tax.Amount });
+                            cmd.Parameters.Add(new SqlParameter("@Type", SqlDbType.VarChar, 50) { Value = tax.DebitType.ToString() });
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        #endregion
+
+                        cmd.Transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        cmd.Transaction.Rollback();
+                        throw;
+                    }
                 }
             }
 
