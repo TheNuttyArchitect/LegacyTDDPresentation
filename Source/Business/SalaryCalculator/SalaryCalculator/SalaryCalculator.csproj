@@ -46,6 +46,7 @@
     <Compile Include="DomainObjects\Enums.cs" />
     <Compile Include="DomainObjects\Salary.cs" />
     <Compile Include="DomainObjects\Tax.cs" />
+    <Compile Include="DomainObjects\TaxRate.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
