@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -299,11 +300,41 @@ namespace SalaryCalculator
                     #endregion
 
                     #region Get Prior Paychecks for year
+                    cmd.Parameters.Clear();
+                    cmd.CommandText =
+                        @"select sum(TotalAmount) TotalYTD, sum(TotalDeductions) DeductionsYTD, sum(TotalTaxes) TaxesYTD
+                            from dbo.Payment  
+                            where EmployeeID = @EmployeeID
+                                	and Paydate < @PayDate";
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = calculatorResponse.EmployeeId });
+                    cmd.Parameters.Add(new SqlParameter("@Paydate", SqlDbType.SmallDateTime) { Value = calculatorResponse.PayDate });
 
+                    using(var reader = cmd.ExecuteReader())
+                    {
+                        int totalYTDOrd = reader.GetOrdinal("TotalYTD");
+                        int deductionsYTDOrd = reader.GetOrdinal("DeductionsYTD");
+                        int taxesYTDOrd = reader.GetOrdinal("TaxesYTD");
+                        int recordIndex = 0;
+
+                        while(reader.Read())
+                        {
+                            if (recordIndex > 0)
+                            {
+                                throw new InvalidDataException(
+                                    "There can not be more than one row of prior paycheck information.");
+                            }
+
+                            calculatorResponse.TotalPayYearToDate = reader.GetDecimal(totalYTDOrd);
+                            calculatorResponse.TotalDeductionsYearToDate = reader.GetDecimal(deductionsYTDOrd);
+                            calculatorResponse.TotalTaxesYearToDate = reader.GetDecimal(taxesYTDOrd);
+                        }
+                    }
                     #endregion
 
                     #region Include YearToDateTotals
-                    
+                    calculatorResponse.TotalPayYearToDate += calculatorResponse.TotalPay;
+                    calculatorResponse.TotalDeductionsYearToDate += calculatorResponse.TotalDeductions;
+                    calculatorResponse.TotalTaxesYearToDate += calculatorResponse.TotalTaxes;
                     #endregion
 
                     #region Calculate Paycheck Totals
