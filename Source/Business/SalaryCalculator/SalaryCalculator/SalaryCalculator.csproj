@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorRepository.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="DomainObjects\AvailableDeduction.cs" />
     <Compile Include="DomainObjects\CalculatorResponse.cs" />
     <Compile Include="DomainObjects\Debit.cs" />
@@ -47,8 +49,11 @@
     <Compile Include="DomainObjects\Salary.cs" />
     <Compile Include="DomainObjects\Tax.cs" />
     <Compile Include="DomainObjects\TaxRate.cs" />
+    <Compile Include="DomainObjects\YearToDateFinancials.cs" />
+    <Compile Include="ICalculatorRepository.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlStatements.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

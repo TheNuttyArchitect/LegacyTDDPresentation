@@ -13,6 +13,12 @@ namespace SalaryCalculator
 {
     public class Service
     {
+        private ICalculatorRepository _calculatorRepository;
+        public ICalculatorRepository Repository
+        {
+            get { return _calculatorRepository ?? (_calculatorRepository = new CalculatorRepository()); }
+        }
+
         public CalculatorResponse Invoke(string firstName, string lastName, DateTime payDate)
         {
             var calculatorResponse = new CalculatorResponse
