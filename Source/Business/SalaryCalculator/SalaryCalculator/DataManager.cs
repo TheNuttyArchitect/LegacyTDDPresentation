@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 
 namespace SalaryCalculator
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DataManager : IDisposable
     {
         private readonly SqlConnection _conn;
@@ -27,6 +30,9 @@ namespace SalaryCalculator
         }
 
         #region Constructor/Deconstructor
+        /// <summary>
+        /// 
+        /// </summary>
         public DataManager()
         {
             _conn = new SqlConnection("Server=localhost;Initial Catalog=Paycheck;Integrated Security=SSPI");
@@ -37,12 +43,19 @@ namespace SalaryCalculator
             Dispose(false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isDisposing"></param>
         private void Dispose(bool isDisposing)
         {
             if(!this._disposed)
@@ -64,25 +77,46 @@ namespace SalaryCalculator
         }
         #endregion
    
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public SqlDataReader ExecuteReader(string commandText, params  SqlParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             return Command.ExecuteReader();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="parameters"></param>
         public void ExecuteNonQuery(string commandText, params SqlParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             Command.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public object ExecuteScalar(string commandText, params SqlParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             return Command.ExecuteScalar();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="parameters"></param>
         public void InitCommandForExecution(string commandText, params SqlParameter[] parameters)
         {
             Command.Parameters.Clear();

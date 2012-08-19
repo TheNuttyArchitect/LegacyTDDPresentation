@@ -1,5 +1,8 @@
 namespace SalaryCalculator
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SqlStatements
     {
         public const string GetEmployeeId = 

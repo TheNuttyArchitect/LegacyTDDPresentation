@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Data.SqlClient.Fakes;
 using System.Linq;
-using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SalaryCalculator;
-using SalaryCalculator.DomainObjects;
 
 namespace SalaryCalculatorTests
 {

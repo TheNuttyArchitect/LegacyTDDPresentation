@@ -55,6 +55,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AssertHelpers.cs" />
+    <Compile Include="CalculatorResponseGuardsTests.cs" />
+    <Compile Include="CalculatorServiceFactoryTests.cs" />
+    <Compile Include="CalculatorServiceTests.cs" />
     <Compile Include="ServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -24,5 +24,11 @@ namespace SalaryCalculator.DomainObjects
         public decimal NetPay { get; set; }
         public IList<Deduction> Deductions { get; set; }
         public IList<Tax> Taxes { get; set; }
+
+        public CalculatorResponse()
+        {
+            Deductions = new List<Deduction>();
+            Taxes = new List<Tax>();
+        }
     }
 }

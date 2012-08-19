@@ -7,16 +7,28 @@ using SalaryCalculator.DomainObjects;
 
 namespace SalaryCalculator
 {
-    public class CalculatorRepository : ICalculatorRepository, IDisposable
+    /// <summary>
+    /// 
+    /// </summary>
+    public class CalculatorRepository : ICalculatorRepository
     {
         private bool _disposed = false;
         private DataManager _dataManager = null;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public CalculatorRepository()
         {
             _dataManager = new DataManager();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
         public Guid GetEmployeeId(string firstName, string lastName)
         {
             return new Guid
@@ -30,6 +42,13 @@ namespace SalaryCalculator
                 );
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="payPeriodBegin"></param>
+        /// <param name="payPeriodEnd"></param>
+        /// <returns></returns>
         public IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)
         {
             decimal annualSalary = 0;
@@ -65,6 +84,13 @@ namespace SalaryCalculator
             return salaries;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="payPeriodBegin"></param>
+        /// <param name="payPeriodEnd"></param>
+        /// <returns></returns>
         public IEnumerable<AvailableDeduction> GetAvailableDeductions(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)
         {
             var availableDeductions = new List<AvailableDeduction>();
@@ -104,6 +130,13 @@ namespace SalaryCalculator
             return availableDeductions;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="annualSalary"></param>
+        /// <param name="payPeriodBegin"></param>
+        /// <param name="payPeriodEnd"></param>
+        /// <returns></returns>
         public IEnumerable<TaxRate> GetPeriodTaxRates(decimal annualSalary, DateTime payPeriodBegin, DateTime payPeriodEnd)
         {
             var taxRates = new List<TaxRate>();
@@ -139,6 +172,12 @@ namespace SalaryCalculator
             return taxRates;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="payDate"></param>
+        /// <returns></returns>
         public YearToDateFinancials GetYearToDateFinancials(Guid employeeId, DateTime payDate)
         {
             YearToDateFinancials ytdFinancials = null;
@@ -176,6 +215,15 @@ namespace SalaryCalculator
             return ytdFinancials;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paymentId"></param>
+        /// <param name="employeeId"></param>
+        /// <param name="payDate"></param>
+        /// <param name="totalAmount"></param>
+        /// <param name="totalDeductions"></param>
+        /// <param name="totalTaxes"></param>
         public void SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, decimal totalAmount, decimal totalDeductions, decimal totalTaxes)
         {
             _dataManager.ExecuteNonQuery
@@ -192,6 +240,12 @@ namespace SalaryCalculator
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paymentId"></param>
+        /// <param name="amount"></param>
+        /// <param name="deductionType"></param>
         public void SaveDeduction(Guid paymentId, decimal amount, DeductionType deductionType)
         {
             _dataManager.ExecuteNonQuery
@@ -203,6 +257,12 @@ namespace SalaryCalculator
                 );
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="paymentId"></param>
+        /// <param name="amount"></param>
+        /// <param name="taxType"></param>
         public void SaveTax(Guid paymentId, decimal amount, TaxType taxType)
         {
             _dataManager.ExecuteNonQuery
@@ -214,17 +274,25 @@ namespace SalaryCalculator
                 );
         }
 
+        #region Dispoable Pattern
         ~CalculatorRepository()
         {
             Dispose(false);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isDisposing"></param>
         private void Dispose(bool isDisposing)
         {
             if (!this._disposed)
@@ -238,7 +306,7 @@ namespace SalaryCalculator
                 }
                 _disposed = true;
             }
-
         }
+        #endregion
     }
 }
