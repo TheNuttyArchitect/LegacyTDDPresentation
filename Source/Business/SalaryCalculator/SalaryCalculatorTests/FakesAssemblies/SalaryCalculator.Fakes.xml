@@ -745,6 +745,162 @@
         <member name="P:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorParameter">
+            <summary>Shim type of SalaryCalculator.CalculatorParameter</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.#ctor(SalaryCalculator.CalculatorParameter)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.Bind(System.Data.IDataParameter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorParameter.Bind(System.Data.IDbDataParameter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ConstructorStringDbTypeByteByteObject">
+            <summary>Sets the shim of CalculatorParameter.CalculatorParameter(String parameterName, DbType dbType, Byte precision, Byte scale, Object value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ConstructorStringDbTypeInt32Object">
+            <summary>Sets the shim of CalculatorParameter.CalculatorParameter(String parameterName, DbType dbType, Int32 size, Object value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ConstructorStringDbTypeObject">
+            <summary>Sets the shim of CalculatorParameter.CalculatorParameter(String parameterName, DbType dbType, Object value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.DbTypeGet">
+            <summary>Sets the shim of CalculatorParameter.get_DbType()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.DbTypeSetDbType">
+            <summary>Sets the shim of CalculatorParameter.set_DbType(DbType value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.DirectionGet">
+            <summary>Sets the shim of CalculatorParameter.get_Direction()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.DirectionSetParameterDirection">
+            <summary>Sets the shim of CalculatorParameter.set_Direction(ParameterDirection value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.IsNullableGet">
+            <summary>Sets the shim of CalculatorParameter.get_IsNullable()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.IsNullableSetBoolean">
+            <summary>Sets the shim of CalculatorParameter.set_IsNullable(Boolean value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ParameterNameGet">
+            <summary>Sets the shim of CalculatorParameter.get_ParameterName()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ParameterNameSetString">
+            <summary>Sets the shim of CalculatorParameter.set_ParameterName(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.PrecisionGet">
+            <summary>Sets the shim of CalculatorParameter.get_Precision()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.PrecisionSetByte">
+            <summary>Sets the shim of CalculatorParameter.set_Precision(Byte value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ScaleGet">
+            <summary>Sets the shim of CalculatorParameter.get_Scale()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ScaleSetByte">
+            <summary>Sets the shim of CalculatorParameter.set_Scale(Byte value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SizeGet">
+            <summary>Sets the shim of CalculatorParameter.get_Size()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SizeSetInt32">
+            <summary>Sets the shim of CalculatorParameter.set_Size(Int32 value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SourceColumnGet">
+            <summary>Sets the shim of CalculatorParameter.get_SourceColumn()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SourceColumnSetString">
+            <summary>Sets the shim of CalculatorParameter.set_SourceColumn(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SourceVersionGet">
+            <summary>Sets the shim of CalculatorParameter.get_SourceVersion()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.SourceVersionSetDataRowVersion">
+            <summary>Sets the shim of CalculatorParameter.set_SourceVersion(DataRowVersion value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ValueGet">
+            <summary>Sets the shim of CalculatorParameter.get_Value()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.ValueSetObject">
+            <summary>Sets the shim of CalculatorParameter.set_Value(Object value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.DbTypeGet">
+            <summary>Sets the shim of CalculatorParameter.get_DbType()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.DbTypeSetDbType">
+            <summary>Sets the shim of CalculatorParameter.set_DbType(DbType value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.DirectionGet">
+            <summary>Sets the shim of CalculatorParameter.get_Direction()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.DirectionSetParameterDirection">
+            <summary>Sets the shim of CalculatorParameter.set_Direction(ParameterDirection value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.IsNullableGet">
+            <summary>Sets the shim of CalculatorParameter.get_IsNullable()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.IsNullableSetBoolean">
+            <summary>Sets the shim of CalculatorParameter.set_IsNullable(Boolean value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ParameterNameGet">
+            <summary>Sets the shim of CalculatorParameter.get_ParameterName()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ParameterNameSetString">
+            <summary>Sets the shim of CalculatorParameter.set_ParameterName(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.PrecisionGet">
+            <summary>Sets the shim of CalculatorParameter.get_Precision()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.PrecisionSetByte">
+            <summary>Sets the shim of CalculatorParameter.set_Precision(Byte value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ScaleGet">
+            <summary>Sets the shim of CalculatorParameter.get_Scale()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ScaleSetByte">
+            <summary>Sets the shim of CalculatorParameter.set_Scale(Byte value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SizeGet">
+            <summary>Sets the shim of CalculatorParameter.get_Size()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SizeSetInt32">
+            <summary>Sets the shim of CalculatorParameter.set_Size(Int32 value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SourceColumnGet">
+            <summary>Sets the shim of CalculatorParameter.get_SourceColumn()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SourceColumnSetString">
+            <summary>Sets the shim of CalculatorParameter.set_SourceColumn(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SourceVersionGet">
+            <summary>Sets the shim of CalculatorParameter.get_SourceVersion()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.SourceVersionSetDataRowVersion">
+            <summary>Sets the shim of CalculatorParameter.set_SourceVersion(DataRowVersion value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ValueGet">
+            <summary>Sets the shim of CalculatorParameter.get_Value()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorParameter.AllInstances.ValueSetObject">
+            <summary>Sets the shim of CalculatorParameter.set_Value(Object value)</summary>
+        </member>
         <member name="T:SalaryCalculator.Fakes.ShimCalculatorRepository">
             <summary>Shim type of SalaryCalculator.CalculatorRepository</summary>
         </member>
@@ -919,6 +1075,15 @@
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.CommandGet">
             <summary>Sets the shim of DataManager.get_Command()</summary>
         </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.CommandSetIDbCommand">
+            <summary>Sets the shim of DataManager.set_Command(IDbCommand value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ConnectionGet">
+            <summary>Sets the shim of DataManager.get_Connection()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ConnectionSetIDbConnection">
+            <summary>Sets the shim of DataManager.set_Connection(IDbConnection value)</summary>
+        </member>
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.Constructor">
             <summary>Sets the shim of DataManager.DataManager()</summary>
         </member>
@@ -928,17 +1093,17 @@
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.DisposeBoolean">
             <summary>Sets the shim of DataManager.Dispose(Boolean isDisposing)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteNonQueryStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteNonQueryStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteReaderStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteReaderStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteScalarStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteScalarStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.InitCommandForExecutionStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.InitCommandForExecutionStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
         <member name="T:SalaryCalculator.Fakes.ShimDataManager.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -946,23 +1111,32 @@
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.CommandGet">
             <summary>Sets the shim of DataManager.get_Command()</summary>
         </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.CommandSetIDbCommand">
+            <summary>Sets the shim of DataManager.set_Command(IDbCommand value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ConnectionGet">
+            <summary>Sets the shim of DataManager.get_Connection()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ConnectionSetIDbConnection">
+            <summary>Sets the shim of DataManager.set_Connection(IDbConnection value)</summary>
+        </member>
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.Dispose">
             <summary>Sets the shim of DataManager.Dispose()</summary>
         </member>
         <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.DisposeBoolean">
             <summary>Sets the shim of DataManager.Dispose(Boolean isDisposing)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteNonQueryStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteNonQueryStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteReaderStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteReaderStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteScalarStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteScalarStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.InitCommandForExecutionStringSqlParameterArray">
-            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, SqlParameter[] parameters)</summary>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.InitCommandForExecutionStringIDbDataParameterArray">
+            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
         <member name="T:SalaryCalculator.Fakes.ShimInvalidVersionException">
             <summary>Shim type of SalaryCalculator.InvalidVersionException</summary>
@@ -1044,6 +1218,30 @@
         </member>
         <member name="T:SalaryCalculator.Fakes.ShimSqlStatements.AllInstances">
             <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubCalculatorParameter">
+            <summary>Stub type of SalaryCalculator.CalculatorParameter</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorParameter.#ctor(System.String,System.Data.DbType,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorParameter.#ctor(System.String,System.Data.DbType,System.Int32,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorParameter.#ctor(System.String,System.Data.DbType,System.Byte,System.Byte,System.Object)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorParameter.InitializeStub">
+            <summary>Initializes a new instance of type StubCalculatorParameter</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorParameter.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorParameter.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorParameter.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:SalaryCalculator.Fakes.StubCalculatorRepository">
             <summary>Stub type of SalaryCalculator.CalculatorRepository</summary>
@@ -1246,23 +1444,23 @@
         <member name="F:SalaryCalculator.Fakes.StubIDataManager.Dispose">
             <summary>Sets the stub of IDisposable.Dispose()</summary>
         </member>
-        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteNonQueryStringSqlParameterArray">
-            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteNonQueryStringIDbDataParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteReaderStringSqlParameterArray">
-            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteReaderStringIDbDataParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteScalarStringSqlParameterArray">
-            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteScalarStringIDbDataParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteNonQuery(System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteNonQuery(System.String,System.Data.IDbDataParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteReader(System.String,System.Data.IDbDataParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
-        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteScalar(System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteScalar(System.String,System.Data.IDbDataParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, IDbDataParameter[] parameters)</summary>
         </member>
         <member name="M:SalaryCalculator.Fakes.StubIDataManager.global::System#IDisposable#Dispose">
             <summary>Sets the stub of IDisposable.Dispose()</summary>

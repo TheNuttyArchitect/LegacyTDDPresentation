@@ -1,6 +1,5 @@
 using System;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace SalaryCalculator
 {
@@ -12,14 +11,14 @@ namespace SalaryCalculator
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        IDataReader ExecuteReader(string commandText, params  SqlParameter[] parameters);
+        IDataReader ExecuteReader(string commandText, params  IDbDataParameter[] parameters);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
-        void ExecuteNonQuery(string commandText, params SqlParameter[] parameters);
+        void ExecuteNonQuery(string commandText, params IDbDataParameter[] parameters);
 
         /// <summary>
         /// 
@@ -27,6 +26,6 @@ namespace SalaryCalculator
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        object ExecuteScalar(string commandText, params SqlParameter[] parameters);
+        object ExecuteScalar(string commandText, params IDbDataParameter[] parameters);
     }
 }

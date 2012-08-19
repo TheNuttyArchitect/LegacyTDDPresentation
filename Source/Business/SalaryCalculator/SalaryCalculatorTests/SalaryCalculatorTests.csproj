@@ -63,6 +63,7 @@
     <Compile Include="CalculatorResponseGuardsTests.cs" />
     <Compile Include="CalculatorServiceFactoryTests.cs" />
     <Compile Include="CalculatorServiceTests.cs" />
+    <Compile Include="DataManagerTests.cs" />
     <Compile Include="ServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

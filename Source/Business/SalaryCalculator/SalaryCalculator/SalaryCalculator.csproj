@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorParameter.cs" />
     <Compile Include="CalculatorRepository.cs" />
     <Compile Include="CalculatorRepositoryException.cs" />
     <Compile Include="CalculatorResponseGuards.cs" />

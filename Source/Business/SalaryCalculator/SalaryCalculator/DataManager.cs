@@ -9,35 +9,41 @@ namespace SalaryCalculator
     /// </summary>
     public class DataManager : IDataManager
     {
-        private readonly SqlConnection _conn;
+        
         private bool _disposed = false;
-        private SqlCommand _command = null;
 
-        private SqlCommand Command
+
+        private IDbConnection _conn;
+        internal IDbConnection Connection
+        {
+            get 
+            { 
+                return _conn ?? 
+                    (
+                        _conn = new SqlConnection("Server=localhost;Initial Catalog=Paycheck;Integrated Security=SSPI")
+                    ); 
+            }
+            set { _conn = value; }
+        }
+
+        private IDbCommand _command = null;
+        internal IDbCommand Command
         {
             get
             {
-                if(_command == null)
-                {
-                    _command = new SqlCommand
-                                   {
-                                       Connection = _conn,
-                                       CommandType = CommandType.Text
-                                   };
-                }
-                return _command;
+                return _command ?? 
+                    (
+                        _command = new SqlCommand
+                            {
+                                Connection = Connection as SqlConnection,
+                                CommandType = CommandType.Text
+                            }
+                    );
             }
+            set { _command = value; }
         }
 
         #region Constructor/Deconstructor
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataManager()
-        {
-            _conn = new SqlConnection("Server=localhost;Initial Catalog=Paycheck;Integrated Security=SSPI");
-        }
-
         ~DataManager()
         {
             Dispose(false);
@@ -83,7 +89,7 @@ namespace SalaryCalculator
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public IDataReader ExecuteReader(string commandText, params  SqlParameter[] parameters)
+        public IDataReader ExecuteReader(string commandText, params  IDbDataParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             return Command.ExecuteReader();
@@ -94,7 +100,7 @@ namespace SalaryCalculator
         /// </summary>
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
-        public void ExecuteNonQuery(string commandText, params SqlParameter[] parameters)
+        public void ExecuteNonQuery(string commandText, params IDbDataParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             Command.ExecuteNonQuery();
@@ -106,7 +112,7 @@ namespace SalaryCalculator
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public object ExecuteScalar(string commandText, params SqlParameter[] parameters)
+        public object ExecuteScalar(string commandText, params IDbDataParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             return Command.ExecuteScalar();
@@ -117,11 +123,19 @@ namespace SalaryCalculator
         /// </summary>
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
-        public void InitCommandForExecution(string commandText, params SqlParameter[] parameters)
+        public void InitCommandForExecution(string commandText, params IDbDataParameter [] parameters)
         {
             Command.Parameters.Clear();
             Command.CommandText = commandText;
-            Command.Parameters.AddRange(parameters);
+            foreach(var parameter in parameters)
+            {
+                Command.Parameters.Add(parameter);
+            }
+
+            if(Connection.State != ConnectionState.Open)
+            {
+                Connection.Open();
+            }
         }
     }
 }

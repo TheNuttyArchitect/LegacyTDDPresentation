@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.IO;
 using SalaryCalculator.DomainObjects;
 
@@ -12,8 +11,8 @@ namespace SalaryCalculator
     /// </summary>
     public class CalculatorRepository : ICalculatorRepository
     {
-        private bool _disposed = false;
-        private IDataManager _dataManager = null;
+        private bool _disposed;
+        private IDataManager _dataManager;
         internal IDataManager DataManager
         {
             get { return _dataManager ?? (_dataManager = new DataManager()); }
@@ -33,8 +32,8 @@ namespace SalaryCalculator
                 var id = DataManager.ExecuteScalar
                     (
                         SqlStatements.GetEmployeeId,
-                        new SqlParameter("@FirstName", SqlDbType.VarChar, 50) {Value = firstName},
-                        new SqlParameter("@LastName", SqlDbType.VarChar, 50) {Value = lastName}
+                        new CalculatorParameter("@FirstName", DbType.AnsiString, 50, firstName),
+                        new CalculatorParameter("@LastName", DbType.AnsiString, 50, lastName)
                     );
 
                 if(id == null || DBNull.Value.Equals(id))
@@ -56,6 +55,7 @@ namespace SalaryCalculator
         /// <param name="employeeId"></param>
         /// <param name="payPeriodBegin"></param>
         /// <param name="payPeriodEnd"></param>
+        /// <param name="annualSalary"> </param>
         /// <returns></returns>
         public IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, out decimal annualSalary)
         {
@@ -66,9 +66,9 @@ namespace SalaryCalculator
                     var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetSalaryInformation,
-                            new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) {Value = employeeId},
-                            new SqlParameter("@PayPeriodBegin", SqlDbType.SmallDateTime) { Value = payPeriodBegin },
-                            new SqlParameter("@PayPeriodEnd", SqlDbType.SmallDateTime) { Value = payPeriodEnd }
+                            new CalculatorParameter("@EmployeeId", DbType.Guid, employeeId),
+                            new CalculatorParameter("@PayPeriodBegin", DbType.DateTime, payPeriodBegin),
+                            new CalculatorParameter("@PayPeriodEnd", DbType.DateTime, payPeriodEnd)
                         )
                 )
             {
@@ -107,9 +107,9 @@ namespace SalaryCalculator
                     var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetAvailableDeductions,
-                            new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = employeeId },
-                            new SqlParameter("@PayPeriodBegin", SqlDbType.SmallDateTime) { Value = payPeriodBegin },
-                            new SqlParameter("@PayPeriodEnd", SqlDbType.SmallDateTime) { Value = payPeriodEnd }
+                            new CalculatorParameter("@EmployeeId", DbType.Guid, employeeId),
+                            new CalculatorParameter("@PayPeriodBegin", DbType.DateTime, payPeriodBegin),
+                            new CalculatorParameter("@PayPeriodEnd", DbType.DateTime, payPeriodEnd)
                         )
                 )
             {
@@ -153,9 +153,9 @@ namespace SalaryCalculator
                     var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetPeriodTaxRates,
-                            new SqlParameter("@Salary", SqlDbType.Decimal) { Value = annualSalary},
-                            new SqlParameter("@PayPeriodBegin", SqlDbType.SmallDateTime) { Value = payPeriodBegin },
-                            new SqlParameter("@PayPeriodEnd", SqlDbType.SmallDateTime) { Value = payPeriodEnd }
+                            new CalculatorParameter("@Salary", DbType.Decimal, annualSalary),
+                            new CalculatorParameter("@PayPeriodBegin", DbType.DateTime, payPeriodBegin),
+                            new CalculatorParameter("@PayPeriodEnd", DbType.DateTime, payPeriodEnd)
                         )
                 )
             {
@@ -195,14 +195,14 @@ namespace SalaryCalculator
                     var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetYearToDateFinancials,
-                            new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = employeeId },
-                            new SqlParameter("@Paydate", SqlDbType.SmallDateTime) { Value = payDate }
+                            new CalculatorParameter("@EmployeeId", DbType.Guid, employeeId),
+                            new CalculatorParameter("@Paydate", DbType.DateTime, payDate)
                         )
                 )
             {
-                int totalYTDOrd = reader.GetOrdinal("TotalYTD");
-                int deductionsYTDOrd = reader.GetOrdinal("DeductionsYTD");
-                int taxesYTDOrd = reader.GetOrdinal("TaxesYTD");
+                int totalYtdOrd = reader.GetOrdinal("TotalYTD");
+                int deductionsYtdOrd = reader.GetOrdinal("DeductionsYTD");
+                int taxesYtdOrd = reader.GetOrdinal("TaxesYTD");
 
                 while(reader.Read())
                 {
@@ -213,9 +213,9 @@ namespace SalaryCalculator
 
                     ytdFinancials = new YearToDateFinancials
                         {
-                            TotalPayYearToDate = reader.GetDecimal(totalYTDOrd),
-                            TotalDeductionsYearToDate = reader.GetDecimal(deductionsYTDOrd),
-                            TotalTaxesYearToDate = reader.GetDecimal(taxesYTDOrd)
+                            TotalPayYearToDate = reader.GetDecimal(totalYtdOrd),
+                            TotalDeductionsYearToDate = reader.GetDecimal(deductionsYtdOrd),
+                            TotalTaxesYearToDate = reader.GetDecimal(taxesYtdOrd)
                         };
                 }
             }
@@ -237,15 +237,13 @@ namespace SalaryCalculator
             DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SavePaycheck,
-                    new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) {Value = paymentId},
-                    new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = employeeId },
-                    new SqlParameter("@Paydate", SqlDbType.SmallDateTime) { Value = payDate },
-                    new SqlParameter("@TotalAmount", SqlDbType.Decimal) { Precision = 7, Scale = 2, Value = totalAmount },
-                    new SqlParameter("@TotalDeductions", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = totalDeductions },
-                    new SqlParameter("@TotalTaxes", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = totalTaxes }
+                    new CalculatorParameter("@PaymentId", DbType.Guid, paymentId),
+                    new CalculatorParameter("@EmployeeId", DbType.Guid, employeeId),
+                    new CalculatorParameter("@Paydate", DbType.DateTime, payDate),
+                    new CalculatorParameter("@TotalAmount", DbType.Decimal, 7, 2,totalAmount),
+                    new CalculatorParameter("@TotalDeductions", DbType.Decimal,  6, 2, totalDeductions),
+                    new CalculatorParameter("@TotalTaxes", DbType.Decimal, 6, 2, totalTaxes)
                 );
-
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -259,9 +257,9 @@ namespace SalaryCalculator
             DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SaveDeduction,
-                    new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = paymentId },
-                    new SqlParameter("@Amount", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = amount },
-                    new SqlParameter("@Type", SqlDbType.VarChar, 50) {Value = deductionType.ToString()}
+                    new CalculatorParameter("@PaymentId", DbType.Guid, paymentId),
+                    new CalculatorParameter("@Amount", DbType.Decimal, 6, 2, amount),
+                    new CalculatorParameter("@Type", DbType.AnsiString, 50, deductionType.ToString())
                 );
         }
 
@@ -276,9 +274,9 @@ namespace SalaryCalculator
             DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SaveTax,
-                    new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = paymentId },
-                    new SqlParameter("@Amount", SqlDbType.Decimal) { Precision = 6, Scale = 2, Value = amount },
-                    new SqlParameter("@Type", SqlDbType.VarChar, 50) { Value = taxType.ToString() }
+                    new CalculatorParameter("@PaymentId", DbType.Guid, paymentId),
+                    new CalculatorParameter("@Amount", DbType.Decimal, 6, 2,amount),
+                    new CalculatorParameter("@Type", DbType.AnsiString, 50, taxType.ToString())
                 );
         }
 
@@ -303,7 +301,7 @@ namespace SalaryCalculator
         /// <param name="isDisposing"></param>
         private void Dispose(bool isDisposing)
         {
-            if (!this._disposed)
+            if (!_disposed)
             {
                 if (isDisposing)
                 {

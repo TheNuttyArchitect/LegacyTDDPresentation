@@ -25,7 +25,7 @@ namespace SalaryCalculatorTests
         {
             var expectedId = Guid.NewGuid();
             var dataManager = new StubIDataManager();
-            dataManager.ExecuteScalarStringSqlParameterArray = (text, parameters) =>
+            dataManager.ExecuteScalarStringIDbDataParameterArray = (text, parameters) =>
                 {
                     return expectedId;
                 };
@@ -44,7 +44,7 @@ namespace SalaryCalculatorTests
         public void GetEmployeeIdThrowsCalculatorRepositoryExceptionWhenIdIsNull()
         {
             var dataManager = new StubIDataManager();
-            dataManager.ExecuteScalarStringSqlParameterArray = (text, parameters) =>
+            dataManager.ExecuteScalarStringIDbDataParameterArray = (text, parameters) =>
             {
                 return null;
             };
@@ -61,7 +61,7 @@ namespace SalaryCalculatorTests
         public void GetEmployeeIdThrowsCalculatorRepositoryExceptionWhenIdIsDBNull()
         {
             var dataManager = new StubIDataManager();
-            dataManager.ExecuteScalarStringSqlParameterArray = (text, parameters) =>
+            dataManager.ExecuteScalarStringIDbDataParameterArray = (text, parameters) =>
             {
                 return DBNull.Value;
             };
@@ -81,7 +81,7 @@ namespace SalaryCalculatorTests
             DateTime salaryStart = DateTime.Now.AddYears(-1).AddDays(21);
             DateTime salaryEnd = DateTime.Now.AddDays(21);
             var dataManager = new StubIDataManager();
-            dataManager.ExecuteReaderStringSqlParameterArray = (text, parameters) =>
+            dataManager.ExecuteReaderStringIDbDataParameterArray = (text, parameters) =>
                 {
                     var reader = new StubIDataReader();
                     reader.GetOrdinalString = (fieldName) =>
@@ -152,7 +152,7 @@ namespace SalaryCalculatorTests
             DateTime secondSalaryStart = DateTime.Now.AddDays(-20);
             DateTime secondSalaryEnd = DateTime.Now.AddDays(20);
             var dataManager = new StubIDataManager();
-            dataManager.ExecuteReaderStringSqlParameterArray = (text, parameters) =>
+            dataManager.ExecuteReaderStringIDbDataParameterArray = (text, parameters) =>
             {
                 var reader = new StubIDataReader();
                 reader.GetOrdinalString = (fieldName) =>
