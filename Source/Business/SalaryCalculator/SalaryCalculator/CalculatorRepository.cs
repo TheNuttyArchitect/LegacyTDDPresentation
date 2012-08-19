@@ -13,14 +13,11 @@ namespace SalaryCalculator
     public class CalculatorRepository : ICalculatorRepository
     {
         private bool _disposed = false;
-        private DataManager _dataManager = null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CalculatorRepository()
+        private IDataManager _dataManager = null;
+        internal IDataManager DataManager
         {
-            _dataManager = new DataManager();
+            get { return _dataManager ?? (_dataManager = new DataManager()); }
+            set { _dataManager = value; }
         }
 
         /// <summary>
@@ -31,15 +28,26 @@ namespace SalaryCalculator
         /// <returns></returns>
         public Guid GetEmployeeId(string firstName, string lastName)
         {
-            return new Guid
-                (
-                    _dataManager.ExecuteScalar
-                        (
-                            SqlStatements.GetEmployeeId,
-                            new SqlParameter("@FirstName", SqlDbType.VarChar, 50) { Value = firstName },
-                            new SqlParameter("@LastName", SqlDbType.VarChar, 50) { Value = lastName }
-                        ).ToString()
-                );
+            try
+            {
+                var id = DataManager.ExecuteScalar
+                    (
+                        SqlStatements.GetEmployeeId,
+                        new SqlParameter("@FirstName", SqlDbType.VarChar, 50) {Value = firstName},
+                        new SqlParameter("@LastName", SqlDbType.VarChar, 50) {Value = lastName}
+                    );
+
+                if(id == null || DBNull.Value.Equals(id))
+                {
+                    throw new NullReferenceException("Datastore contains no id for employee");
+                }
+
+                return new Guid(id.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new CalculatorRepositoryException(string.Format("Could not get EmployeeId for {0}, {1}", firstName, lastName), ex);
+            }
         }
 
         /// <summary>
@@ -49,13 +57,13 @@ namespace SalaryCalculator
         /// <param name="payPeriodBegin"></param>
         /// <param name="payPeriodEnd"></param>
         /// <returns></returns>
-        public IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)
+        public IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, out decimal annualSalary)
         {
-            decimal annualSalary = 0;
+            annualSalary = 0;
             var salaries = new List<Salary>();
             using 
                 (
-                    var reader = _dataManager.ExecuteReader
+                    var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetSalaryInformation,
                             new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) {Value = employeeId},
@@ -96,7 +104,7 @@ namespace SalaryCalculator
             var availableDeductions = new List<AvailableDeduction>();
             using
                 (
-                    var reader = _dataManager.ExecuteReader
+                    var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetAvailableDeductions,
                             new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = employeeId },
@@ -142,7 +150,7 @@ namespace SalaryCalculator
             var taxRates = new List<TaxRate>();
             using
                 (
-                    var reader = _dataManager.ExecuteReader
+                    var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetPeriodTaxRates,
                             new SqlParameter("@Salary", SqlDbType.Decimal) { Value = annualSalary},
@@ -184,7 +192,7 @@ namespace SalaryCalculator
 
             using
                 (
-                    var reader = _dataManager.ExecuteReader
+                    var reader = DataManager.ExecuteReader
                         (
                             SqlStatements.GetYearToDateFinancials,
                             new SqlParameter("@EmployeeId", SqlDbType.UniqueIdentifier) { Value = employeeId },
@@ -226,7 +234,7 @@ namespace SalaryCalculator
         /// <param name="totalTaxes"></param>
         public void SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, decimal totalAmount, decimal totalDeductions, decimal totalTaxes)
         {
-            _dataManager.ExecuteNonQuery
+            DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SavePaycheck,
                     new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) {Value = paymentId},
@@ -248,7 +256,7 @@ namespace SalaryCalculator
         /// <param name="deductionType"></param>
         public void SaveDeduction(Guid paymentId, decimal amount, DeductionType deductionType)
         {
-            _dataManager.ExecuteNonQuery
+            DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SaveDeduction,
                     new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = paymentId },
@@ -265,7 +273,7 @@ namespace SalaryCalculator
         /// <param name="taxType"></param>
         public void SaveTax(Guid paymentId, decimal amount, TaxType taxType)
         {
-            _dataManager.ExecuteNonQuery
+            DataManager.ExecuteNonQuery
                 (
                     SqlStatements.SaveTax,
                     new SqlParameter("@PaymentId", SqlDbType.UniqueIdentifier) { Value = paymentId },

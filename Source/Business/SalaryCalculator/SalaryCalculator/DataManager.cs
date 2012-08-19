@@ -7,7 +7,7 @@ namespace SalaryCalculator
     /// <summary>
     /// 
     /// </summary>
-    public class DataManager : IDisposable
+    public class DataManager : IDataManager
     {
         private readonly SqlConnection _conn;
         private bool _disposed = false;
@@ -83,7 +83,7 @@ namespace SalaryCalculator
         /// <param name="commandText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public SqlDataReader ExecuteReader(string commandText, params  SqlParameter[] parameters)
+        public IDataReader ExecuteReader(string commandText, params  SqlParameter[] parameters)
         {
             InitCommandForExecution(commandText, parameters);
             return Command.ExecuteReader();

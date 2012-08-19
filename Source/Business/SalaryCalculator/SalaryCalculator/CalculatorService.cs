@@ -16,6 +16,7 @@ namespace SalaryCalculator
         public ICalculatorRepository Repository
         {
             get { return _calculatorRepository ?? (_calculatorRepository = new CalculatorRepository()); }
+            set { _calculatorRepository = value; }
         }
 
         /// <summary>
@@ -45,6 +46,7 @@ namespace SalaryCalculator
 
             var calculatorResponse = new CalculatorResponse
             {
+                EmployeeId = Repository.GetEmployeeId(firstName, lastName),
                 FullName = String.Format("{0}, {1}", lastName, firstName),
                 PaymentId = Guid.NewGuid(),
                 PayDate = payDate,

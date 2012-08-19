@@ -1,0 +1,1385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SalaryCalculator.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction">
+            <summary>Shim type of SalaryCalculator.DomainObjects.AvailableDeduction</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.#ctor(SalaryCalculator.DomainObjects.AvailableDeduction)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.Constructor">
+            <summary>Sets the shim of AvailableDeduction.AvailableDeduction()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.EmployeeDeductionEndDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_EmployeeDeductionEndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.EmployeeDeductionEndDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_EmployeeDeductionEndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.EmployeeDeductionStartDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_EmployeeDeductionStartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.EmployeeDeductionStartDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_EmployeeDeductionStartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateEndDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_RateEndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateEndDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_RateEndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateGet">
+            <summary>Sets the shim of AvailableDeduction.get_Rate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateSetDecimal">
+            <summary>Sets the shim of AvailableDeduction.set_Rate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateStartDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_RateStartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.RateStartDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_RateStartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.TypeGet">
+            <summary>Sets the shim of AvailableDeduction.get_Type()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.TypeSetDeductionType">
+            <summary>Sets the shim of AvailableDeduction.set_Type(DeductionType value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.EmployeeDeductionEndDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_EmployeeDeductionEndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.EmployeeDeductionEndDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_EmployeeDeductionEndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.EmployeeDeductionStartDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_EmployeeDeductionStartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.EmployeeDeductionStartDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_EmployeeDeductionStartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateEndDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_RateEndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateEndDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_RateEndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateGet">
+            <summary>Sets the shim of AvailableDeduction.get_Rate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateSetDecimal">
+            <summary>Sets the shim of AvailableDeduction.set_Rate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateStartDateGet">
+            <summary>Sets the shim of AvailableDeduction.get_RateStartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.RateStartDateSetDateTime">
+            <summary>Sets the shim of AvailableDeduction.set_RateStartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.TypeGet">
+            <summary>Sets the shim of AvailableDeduction.get_Type()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimAvailableDeduction.AllInstances.TypeSetDeductionType">
+            <summary>Sets the shim of AvailableDeduction.set_Type(DeductionType value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse">
+            <summary>Shim type of SalaryCalculator.DomainObjects.CalculatorResponse</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.#ctor(SalaryCalculator.DomainObjects.CalculatorResponse)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.Constructor">
+            <summary>Sets the shim of CalculatorResponse.CalculatorResponse()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.DeductionsGet">
+            <summary>Sets the shim of CalculatorResponse.get_Deductions()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.DeductionsSetIListOfDeduction">
+            <summary>Sets the shim of CalculatorResponse.set_Deductions(IList`1&lt;Deduction&gt; value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.EmployeeIdGet">
+            <summary>Sets the shim of CalculatorResponse.get_EmployeeId()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.EmployeeIdSetGuid">
+            <summary>Sets the shim of CalculatorResponse.set_EmployeeId(Guid value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.FullNameGet">
+            <summary>Sets the shim of CalculatorResponse.get_FullName()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.FullNameSetString">
+            <summary>Sets the shim of CalculatorResponse.set_FullName(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.NetPayGet">
+            <summary>Sets the shim of CalculatorResponse.get_NetPay()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.NetPaySetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_NetPay(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayDateSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayPeriodBeginGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayPeriodBegin()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayPeriodBeginSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayPeriodBegin(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayPeriodEndGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayPeriodEnd()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PayPeriodEndSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayPeriodEnd(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PaymentIdGet">
+            <summary>Sets the shim of CalculatorResponse.get_PaymentId()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.PaymentIdSetGuid">
+            <summary>Sets the shim of CalculatorResponse.set_PaymentId(Guid value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TaxableAmountGet">
+            <summary>Sets the shim of CalculatorResponse.get_TaxableAmount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TaxableAmountSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TaxableAmount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TaxesGet">
+            <summary>Sets the shim of CalculatorResponse.get_Taxes()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TaxesSetIListOfTax">
+            <summary>Sets the shim of CalculatorResponse.set_Taxes(IList`1&lt;Tax&gt; value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalDeductionsGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalDeductions()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalDeductionsSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalDeductions(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalDeductionsYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalDeductionsYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalDeductionsYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalDeductionsYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalPayGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalPay()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalPaySetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalPay(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalPayYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalPayYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalPayYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalPayYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalTaxesGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalTaxes()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalTaxesSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalTaxes(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalTaxesYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalTaxesYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.TotalTaxesYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalTaxesYearToDate(Decimal value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.DeductionsGet">
+            <summary>Sets the shim of CalculatorResponse.get_Deductions()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.DeductionsSetIListOfDeduction">
+            <summary>Sets the shim of CalculatorResponse.set_Deductions(IList`1&lt;Deduction&gt; value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.EmployeeIdGet">
+            <summary>Sets the shim of CalculatorResponse.get_EmployeeId()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.EmployeeIdSetGuid">
+            <summary>Sets the shim of CalculatorResponse.set_EmployeeId(Guid value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.FullNameGet">
+            <summary>Sets the shim of CalculatorResponse.get_FullName()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.FullNameSetString">
+            <summary>Sets the shim of CalculatorResponse.set_FullName(String value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.NetPayGet">
+            <summary>Sets the shim of CalculatorResponse.get_NetPay()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.NetPaySetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_NetPay(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayDateSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayPeriodBeginGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayPeriodBegin()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayPeriodBeginSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayPeriodBegin(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayPeriodEndGet">
+            <summary>Sets the shim of CalculatorResponse.get_PayPeriodEnd()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PayPeriodEndSetDateTime">
+            <summary>Sets the shim of CalculatorResponse.set_PayPeriodEnd(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PaymentIdGet">
+            <summary>Sets the shim of CalculatorResponse.get_PaymentId()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.PaymentIdSetGuid">
+            <summary>Sets the shim of CalculatorResponse.set_PaymentId(Guid value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TaxableAmountGet">
+            <summary>Sets the shim of CalculatorResponse.get_TaxableAmount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TaxableAmountSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TaxableAmount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TaxesGet">
+            <summary>Sets the shim of CalculatorResponse.get_Taxes()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TaxesSetIListOfTax">
+            <summary>Sets the shim of CalculatorResponse.set_Taxes(IList`1&lt;Tax&gt; value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalDeductionsGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalDeductions()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalDeductionsSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalDeductions(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalDeductionsYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalDeductionsYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalDeductionsYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalDeductionsYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalPayGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalPay()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalPaySetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalPay(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalPayYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalPayYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalPayYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalPayYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalTaxesGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalTaxes()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalTaxesSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalTaxes(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalTaxesYearToDateGet">
+            <summary>Sets the shim of CalculatorResponse.get_TotalTaxesYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimCalculatorResponse.AllInstances.TotalTaxesYearToDateSetDecimal">
+            <summary>Sets the shim of CalculatorResponse.set_TotalTaxesYearToDate(Decimal value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1">
+            <summary>Shim type of SalaryCalculator.DomainObjects.Debit`1</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.#ctor(SalaryCalculator.DomainObjects.Debit{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AmountGet">
+            <summary>Sets the shim of Debit`1.get_Amount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AmountSetDecimal">
+            <summary>Sets the shim of Debit`1.set_Amount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.Constructor">
+            <summary>Sets the shim of Debit`1.Debit`1()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.DebitTypeGet">
+            <summary>Sets the shim of Debit`1.get_DebitType()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.DebitTypeSetT0">
+            <summary>Sets the shim of Debit`1.set_DebitType(!0 value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AllInstances.AmountGet">
+            <summary>Sets the shim of Debit`1.get_Amount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AllInstances.AmountSetDecimal">
+            <summary>Sets the shim of Debit`1.set_Amount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AllInstances.DebitTypeGet">
+            <summary>Sets the shim of Debit`1.get_DebitType()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDebit`1.AllInstances.DebitTypeSetT0">
+            <summary>Sets the shim of Debit`1.set_DebitType(!0 value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimDeduction">
+            <summary>Shim type of SalaryCalculator.DomainObjects.Deduction</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.#ctor(SalaryCalculator.DomainObjects.Deduction)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.Constructor">
+            <summary>Sets the shim of Deduction.Deduction()</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimDeduction.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimSalary">
+            <summary>Shim type of SalaryCalculator.DomainObjects.Salary</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimSalary.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimSalary.#ctor(SalaryCalculator.DomainObjects.Salary)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimSalary.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimSalary.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AnnualAmountGet">
+            <summary>Sets the shim of Salary.get_AnnualAmount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AnnualAmountSetDecimal">
+            <summary>Sets the shim of Salary.set_AnnualAmount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.BeginDateGet">
+            <summary>Sets the shim of Salary.get_BeginDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.BeginDateSetDateTime">
+            <summary>Sets the shim of Salary.set_BeginDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.Constructor">
+            <summary>Sets the shim of Salary.Salary()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.EndDateGet">
+            <summary>Sets the shim of Salary.get_EndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.EndDateSetDateTime">
+            <summary>Sets the shim of Salary.set_EndDate(DateTime value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.AnnualAmountGet">
+            <summary>Sets the shim of Salary.get_AnnualAmount()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.AnnualAmountSetDecimal">
+            <summary>Sets the shim of Salary.set_AnnualAmount(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.BeginDateGet">
+            <summary>Sets the shim of Salary.get_BeginDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.BeginDateSetDateTime">
+            <summary>Sets the shim of Salary.set_BeginDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.EndDateGet">
+            <summary>Sets the shim of Salary.get_EndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimSalary.AllInstances.EndDateSetDateTime">
+            <summary>Sets the shim of Salary.set_EndDate(DateTime value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimTax">
+            <summary>Shim type of SalaryCalculator.DomainObjects.Tax</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTax.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTax.#ctor(SalaryCalculator.DomainObjects.Tax)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTax.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTax.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTax.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTax.Constructor">
+            <summary>Sets the shim of Tax.Tax()</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimTax.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate">
+            <summary>Shim type of SalaryCalculator.DomainObjects.TaxRate</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.#ctor(SalaryCalculator.DomainObjects.TaxRate)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.Constructor">
+            <summary>Sets the shim of TaxRate.TaxRate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.EndDateGet">
+            <summary>Sets the shim of TaxRate.get_EndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.EndDateSetDateTime">
+            <summary>Sets the shim of TaxRate.set_EndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.RateGet">
+            <summary>Sets the shim of TaxRate.get_Rate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.RateSetDecimal">
+            <summary>Sets the shim of TaxRate.set_Rate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.StartDateGet">
+            <summary>Sets the shim of TaxRate.get_StartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.StartDateSetDateTime">
+            <summary>Sets the shim of TaxRate.set_StartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.TypeGet">
+            <summary>Sets the shim of TaxRate.get_Type()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.TypeSetTaxType">
+            <summary>Sets the shim of TaxRate.set_Type(TaxType value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.EndDateGet">
+            <summary>Sets the shim of TaxRate.get_EndDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.EndDateSetDateTime">
+            <summary>Sets the shim of TaxRate.set_EndDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.RateGet">
+            <summary>Sets the shim of TaxRate.get_Rate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.RateSetDecimal">
+            <summary>Sets the shim of TaxRate.set_Rate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.StartDateGet">
+            <summary>Sets the shim of TaxRate.get_StartDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.StartDateSetDateTime">
+            <summary>Sets the shim of TaxRate.set_StartDate(DateTime value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.TypeGet">
+            <summary>Sets the shim of TaxRate.get_Type()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimTaxRate.AllInstances.TypeSetTaxType">
+            <summary>Sets the shim of TaxRate.set_Type(TaxType value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials">
+            <summary>Shim type of SalaryCalculator.DomainObjects.YearToDateFinancials</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.#ctor(SalaryCalculator.DomainObjects.YearToDateFinancials)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.Constructor">
+            <summary>Sets the shim of YearToDateFinancials.YearToDateFinancials()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalDeductionsYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalDeductionsYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalDeductionsYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalDeductionsYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalPayYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalPayYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalPayYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalPayYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalTaxesYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalTaxesYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.TotalTaxesYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalTaxesYearToDate(Decimal value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalDeductionsYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalDeductionsYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalDeductionsYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalDeductionsYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalPayYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalPayYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalPayYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalPayYearToDate(Decimal value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalTaxesYearToDateGet">
+            <summary>Sets the shim of YearToDateFinancials.get_TotalTaxesYearToDate()</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.ShimYearToDateFinancials.AllInstances.TotalTaxesYearToDateSetDecimal">
+            <summary>Sets the shim of YearToDateFinancials.set_TotalTaxesYearToDate(Decimal value)</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction">
+            <summary>Stub type of SalaryCalculator.DomainObjects.AvailableDeduction</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction.InitializeStub">
+            <summary>Initializes a new instance of type StubAvailableDeduction</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubAvailableDeduction.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse">
+            <summary>Stub type of SalaryCalculator.DomainObjects.CalculatorResponse</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse.InitializeStub">
+            <summary>Initializes a new instance of type StubCalculatorResponse</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubCalculatorResponse.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubDebit`1">
+            <summary>Stub type of SalaryCalculator.DomainObjects.Debit`1</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubDebit`1.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubDebit`1.InitializeStub">
+            <summary>Initializes a new instance of type StubDebit</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDebit`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDebit`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDebit`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubDeduction">
+            <summary>Stub type of SalaryCalculator.DomainObjects.Deduction</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubDeduction.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubDeduction.InitializeStub">
+            <summary>Initializes a new instance of type StubDeduction</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDeduction.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDeduction.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubDeduction.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubSalary">
+            <summary>Stub type of SalaryCalculator.DomainObjects.Salary</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubSalary.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubSalary.InitializeStub">
+            <summary>Initializes a new instance of type StubSalary</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubSalary.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubSalary.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubSalary.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubTax">
+            <summary>Stub type of SalaryCalculator.DomainObjects.Tax</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubTax.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubTax.InitializeStub">
+            <summary>Initializes a new instance of type StubTax</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTax.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTax.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTax.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubTaxRate">
+            <summary>Stub type of SalaryCalculator.DomainObjects.TaxRate</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubTaxRate.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubTaxRate.InitializeStub">
+            <summary>Initializes a new instance of type StubTaxRate</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTaxRate.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTaxRate.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubTaxRate.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials">
+            <summary>Stub type of SalaryCalculator.DomainObjects.YearToDateFinancials</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.InitializeStub">
+            <summary>Initializes a new instance of type StubYearToDateFinancials</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.DomainObjects.Fakes.StubYearToDateFinancials.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorRepository">
+            <summary>Shim type of SalaryCalculator.CalculatorRepository</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.#ctor(SalaryCalculator.CalculatorRepository)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.Bind(SalaryCalculator.ICalculatorRepository)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepository.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.Constructor">
+            <summary>Sets the shim of CalculatorRepository.CalculatorRepository()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.DataManagerGet">
+            <summary>Sets the shim of CalculatorRepository.get_DataManager()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.DataManagerSetIDataManager">
+            <summary>Sets the shim of CalculatorRepository.set_DataManager(IDataManager value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.Dispose">
+            <summary>Sets the shim of CalculatorRepository.Dispose()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.DisposeBoolean">
+            <summary>Sets the shim of CalculatorRepository.Dispose(Boolean isDisposing)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.GetAvailableDeductionsGuidDateTimeDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetAvailableDeductions(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.GetEmployeeIdStringString">
+            <summary>Sets the shim of CalculatorRepository.GetEmployeeId(String firstName, String lastName)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.GetPeriodTaxRatesDecimalDateTimeDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetPeriodTaxRates(Decimal annualSalary, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.GetSalaryInformationGuidDateTimeDateTimeDecimalOut">
+            <summary>Sets the shim of CalculatorRepository.GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, Decimal&amp; annualSalary)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.GetYearToDateFinancialsGuidDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetYearToDateFinancials(Guid employeeId, DateTime payDate)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.SaveDeductionGuidDecimalDeductionType">
+            <summary>Sets the shim of CalculatorRepository.SaveDeduction(Guid paymentId, Decimal amount, DeductionType deductionType)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.SavePaycheckGuidGuidDateTimeDecimalDecimalDecimal">
+            <summary>Sets the shim of CalculatorRepository.SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, Decimal totalAmount, Decimal totalDeductions, Decimal totalTaxes)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.SaveTaxGuidDecimalTaxType">
+            <summary>Sets the shim of CalculatorRepository.SaveTax(Guid paymentId, Decimal amount, TaxType taxType)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.DataManagerGet">
+            <summary>Sets the shim of CalculatorRepository.get_DataManager()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.DataManagerSetIDataManager">
+            <summary>Sets the shim of CalculatorRepository.set_DataManager(IDataManager value)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.Dispose">
+            <summary>Sets the shim of CalculatorRepository.Dispose()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of CalculatorRepository.Dispose(Boolean isDisposing)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.GetAvailableDeductionsGuidDateTimeDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetAvailableDeductions(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.GetEmployeeIdStringString">
+            <summary>Sets the shim of CalculatorRepository.GetEmployeeId(String firstName, String lastName)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.GetPeriodTaxRatesDecimalDateTimeDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetPeriodTaxRates(Decimal annualSalary, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.GetSalaryInformationGuidDateTimeDateTimeDecimalOut">
+            <summary>Sets the shim of CalculatorRepository.GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, Decimal&amp; annualSalary)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.GetYearToDateFinancialsGuidDateTime">
+            <summary>Sets the shim of CalculatorRepository.GetYearToDateFinancials(Guid employeeId, DateTime payDate)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.SaveDeductionGuidDecimalDeductionType">
+            <summary>Sets the shim of CalculatorRepository.SaveDeduction(Guid paymentId, Decimal amount, DeductionType deductionType)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.SavePaycheckGuidGuidDateTimeDecimalDecimalDecimal">
+            <summary>Sets the shim of CalculatorRepository.SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, Decimal totalAmount, Decimal totalDeductions, Decimal totalTaxes)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepository.AllInstances.SaveTaxGuidDecimalTaxType">
+            <summary>Sets the shim of CalculatorRepository.SaveTax(Guid paymentId, Decimal amount, TaxType taxType)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorRepositoryException">
+            <summary>Shim type of SalaryCalculator.CalculatorRepositoryException</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.#ctor(SalaryCalculator.CalculatorRepositoryException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.ConstructorStringException">
+            <summary>Sets the shim of CalculatorRepositoryException.CalculatorRepositoryException(String message, Exception ex)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorRepositoryException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimCalculatorServiceFactory">
+            <summary>Shim type of SalaryCalculator.CalculatorServiceFactory</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorServiceFactory.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorServiceFactory.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimCalculatorServiceFactory.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorServiceFactory.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimCalculatorServiceFactory.CreateCalculatorServiceInt16">
+            <summary>Sets the shim of CalculatorServiceFactory.CreateCalculatorService(Int16 versionNumber)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimDataManager">
+            <summary>Shim type of SalaryCalculator.DataManager</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.#ctor(SalaryCalculator.DataManager)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.Bind(SalaryCalculator.IDataManager)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimDataManager.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.CommandGet">
+            <summary>Sets the shim of DataManager.get_Command()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.Constructor">
+            <summary>Sets the shim of DataManager.DataManager()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.Dispose">
+            <summary>Sets the shim of DataManager.Dispose()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.DisposeBoolean">
+            <summary>Sets the shim of DataManager.Dispose(Boolean isDisposing)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteNonQueryStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteReaderStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.ExecuteScalarStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.InitCommandForExecutionStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimDataManager.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.CommandGet">
+            <summary>Sets the shim of DataManager.get_Command()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.Dispose">
+            <summary>Sets the shim of DataManager.Dispose()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of DataManager.Dispose(Boolean isDisposing)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteNonQueryStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteReaderStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.ExecuteScalarStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimDataManager.AllInstances.InitCommandForExecutionStringSqlParameterArray">
+            <summary>Sets the shim of DataManager.InitCommandForExecution(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimInvalidVersionException">
+            <summary>Shim type of SalaryCalculator.InvalidVersionException</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimInvalidVersionException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimInvalidVersionException.#ctor(SalaryCalculator.InvalidVersionException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimInvalidVersionException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimInvalidVersionException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimInvalidVersionException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimInvalidVersionException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimInvalidVersionException.Constructor">
+            <summary>Sets the shim of InvalidVersionException.InvalidVersionException()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimInvalidVersionException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimService">
+            <summary>Shim type of SalaryCalculator.Service</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimService.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimService.#ctor(SalaryCalculator.Service)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimService.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimService.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimService.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimService.Constructor">
+            <summary>Sets the shim of Service.Service()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimService.InvokeStringStringDateTime">
+            <summary>Sets the shim of Service.Invoke(String firstName, String lastName, DateTime payDate)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimService.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimService.AllInstances.InvokeStringStringDateTime">
+            <summary>Sets the shim of Service.Invoke(String firstName, String lastName, DateTime payDate)</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimSqlStatements">
+            <summary>Shim type of SalaryCalculator.SqlStatements</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimSqlStatements.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimSqlStatements.#ctor(SalaryCalculator.SqlStatements)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimSqlStatements.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.ShimSqlStatements.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimSqlStatements.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.ShimSqlStatements.Constructor">
+            <summary>Sets the shim of SqlStatements.SqlStatements()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.ShimSqlStatements.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubCalculatorRepository">
+            <summary>Stub type of SalaryCalculator.CalculatorRepository</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepository.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepository.InitializeStub">
+            <summary>Initializes a new instance of type StubCalculatorRepository</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepository.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepository.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepository.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubCalculatorRepositoryException">
+            <summary>Stub type of SalaryCalculator.CalculatorRepositoryException</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubCalculatorRepositoryException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubCalculatorRepositoryException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.GetBaseException">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.InitializeStub">
+            <summary>Initializes a new instance of type StubCalculatorRepositoryException</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubCalculatorRepositoryException.ToString">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubCalculatorRepositoryException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubCalculatorRepositoryException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubDataManager">
+            <summary>Stub type of SalaryCalculator.DataManager</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubDataManager.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubDataManager.InitializeStub">
+            <summary>Initializes a new instance of type StubDataManager</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubDataManager.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubDataManager.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubDataManager.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubICalculatorRepository">
+            <summary>Stub type of SalaryCalculator.ICalculatorRepository</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.#ctor">
+            <summary>Initializes a new instance of type StubICalculatorRepository</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.GetAvailableDeductionsGuidDateTimeDateTime">
+            <summary>Sets the stub of ICalculatorRepository.GetAvailableDeductions(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.GetEmployeeIdStringString">
+            <summary>Sets the stub of ICalculatorRepository.GetEmployeeId(String firstName, String lastName)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.GetPeriodTaxRatesDecimalDateTimeDateTime">
+            <summary>Sets the stub of ICalculatorRepository.GetPeriodTaxRates(Decimal annualSalary, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.GetSalaryInformationGuidDateTimeDateTimeDecimalOut">
+            <summary>Sets the stub of ICalculatorRepository.GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, Decimal&amp; annualSalary)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.GetYearToDateFinancialsGuidDateTime">
+            <summary>Sets the stub of ICalculatorRepository.GetYearToDateFinancials(Guid employeeId, DateTime payDate)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#GetAvailableDeductions(System.Guid,System.DateTime,System.DateTime)">
+            <summary>Sets the stub of ICalculatorRepository.GetAvailableDeductions(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#GetEmployeeId(System.String,System.String)">
+            <summary>Sets the stub of ICalculatorRepository.GetEmployeeId(String firstName, String lastName)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#GetPeriodTaxRates(System.Decimal,System.DateTime,System.DateTime)">
+            <summary>Sets the stub of ICalculatorRepository.GetPeriodTaxRates(Decimal annualSalary, DateTime payPeriodBegin, DateTime payPeriodEnd)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#GetSalaryInformation(System.Guid,System.DateTime,System.DateTime,System.Decimal@)">
+            <summary>Sets the stub of ICalculatorRepository.GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, Decimal&amp; annualSalary)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#GetYearToDateFinancials(System.Guid,System.DateTime)">
+            <summary>Sets the stub of ICalculatorRepository.GetYearToDateFinancials(Guid employeeId, DateTime payDate)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#SaveDeduction(System.Guid,System.Decimal,SalaryCalculator.DomainObjects.DeductionType)">
+            <summary>Sets the stub of ICalculatorRepository.SaveDeduction(Guid paymentId, Decimal amount, DeductionType deductionType)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#SavePaycheck(System.Guid,System.Guid,System.DateTime,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>Sets the stub of ICalculatorRepository.SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, Decimal totalAmount, Decimal totalDeductions, Decimal totalTaxes)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.sc::SalaryCalculator#ICalculatorRepository#SaveTax(System.Guid,System.Decimal,SalaryCalculator.DomainObjects.TaxType)">
+            <summary>Sets the stub of ICalculatorRepository.SaveTax(Guid paymentId, Decimal amount, TaxType taxType)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.SaveDeductionGuidDecimalDeductionType">
+            <summary>Sets the stub of ICalculatorRepository.SaveDeduction(Guid paymentId, Decimal amount, DeductionType deductionType)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.SavePaycheckGuidGuidDateTimeDecimalDecimalDecimal">
+            <summary>Sets the stub of ICalculatorRepository.SavePaycheck(Guid paymentId, Guid employeeId, DateTime payDate, Decimal totalAmount, Decimal totalDeductions, Decimal totalTaxes)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorRepository.SaveTaxGuidDecimalTaxType">
+            <summary>Sets the stub of ICalculatorRepository.SaveTax(Guid paymentId, Decimal amount, TaxType taxType)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorRepository.global::System#IDisposable#Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubICalculatorService">
+            <summary>Stub type of SalaryCalculator.ICalculatorService</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorService.#ctor">
+            <summary>Initializes a new instance of type StubICalculatorService</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorService.Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubICalculatorService.InvokeStringStringDateTime">
+            <summary>Sets the stub of ICalculatorService.Invoke(String firstName, String lastName, DateTime payDate)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorService.sc::SalaryCalculator#ICalculatorService#Invoke(System.String,System.String,System.DateTime)">
+            <summary>Sets the stub of ICalculatorService.Invoke(String firstName, String lastName, DateTime payDate)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubICalculatorService.global::System#IDisposable#Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubIDataManager">
+            <summary>Stub type of SalaryCalculator.IDataManager</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.#ctor">
+            <summary>Initializes a new instance of type StubIDataManager</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteNonQueryStringSqlParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteReaderStringSqlParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubIDataManager.ExecuteScalarStringSqlParameterArray">
+            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteNonQuery(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteNonQuery(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteReader(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.sc::SalaryCalculator#IDataManager#ExecuteScalar(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>Sets the stub of IDataManager.ExecuteScalar(String commandText, SqlParameter[] parameters)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubIDataManager.global::System#IDisposable#Dispose">
+            <summary>Sets the stub of IDisposable.Dispose()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubInvalidVersionException">
+            <summary>Stub type of SalaryCalculator.InvalidVersionException</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubInvalidVersionException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubInvalidVersionException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.GetBaseException">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.InitializeStub">
+            <summary>Initializes a new instance of type StubInvalidVersionException</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubInvalidVersionException.ToString">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:SalaryCalculator.Fakes.StubInvalidVersionException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubInvalidVersionException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubService">
+            <summary>Stub type of SalaryCalculator.Service</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubService.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubService.InitializeStub">
+            <summary>Initializes a new instance of type StubService</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubService.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubService.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubService.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:SalaryCalculator.Fakes.StubSqlStatements">
+            <summary>Stub type of SalaryCalculator.SqlStatements</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubSqlStatements.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:SalaryCalculator.Fakes.StubSqlStatements.InitializeStub">
+            <summary>Initializes a new instance of type StubSqlStatements</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubSqlStatements.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubSqlStatements.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:SalaryCalculator.Fakes.StubSqlStatements.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorRepository.cs" />
+    <Compile Include="CalculatorRepositoryException.cs" />
     <Compile Include="CalculatorResponseGuards.cs" />
     <Compile Include="CalculatorService.cs" />
     <Compile Include="CalculatorServiceFactory.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="DomainObjects\YearToDateFinancials.cs" />
     <Compile Include="ICalculatorRepository.cs" />
     <Compile Include="ICalculatorService.cs" />
+    <Compile Include="IDataManager.cs" />
     <Compile Include="InvalidVersionException.cs" />
     <Compile Include="LegacyCalculatorService.cs" />
     <Compile Include="Service.cs" />

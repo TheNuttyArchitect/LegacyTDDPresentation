@@ -13,15 +13,16 @@ namespace SalaryCalculator
         /// <param name="lastName"></param>
         /// <returns></returns>
         Guid GetEmployeeId(string firstName, string lastName);
-        
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="employeeId"></param>
         /// <param name="payPeriodBegin"></param>
         /// <param name="payPeriodEnd"></param>
+        /// <param name="annualSalary"> </param>
         /// <returns></returns>
-        IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd);
+        IEnumerable<Salary> GetSalaryInformation(Guid employeeId, DateTime payPeriodBegin, DateTime payPeriodEnd, out decimal annualSalary);
         
         /// <summary>
         /// 
